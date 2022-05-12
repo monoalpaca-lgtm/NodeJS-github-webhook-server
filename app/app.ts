@@ -16,6 +16,10 @@ app.get('/kenny', function (req, res) {
   res.send('Its Kenny!');
 });
 
+app.get('/andy', function (req, res) {
+  res.send('Its andy!');
+});
+
 app.get('/pullGit', (req, res) => {
   res.send(`Updated repository here: ${githubWebhooksPath}`);
   child.exec(`./scripts/UpdateGitWebhookRepo.sh`, (error, stdout, stderr) => {
