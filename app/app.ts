@@ -48,13 +48,12 @@ app.post('/github-webhooks/payload', (req, res) => {
   const getRepo = Repos.RepoByName[requestRepoName];
   
   if (!getRepo) {
+    console.error(`This repo have not been allowlisted yet ${getRepo.name}`);
     return;
   }
 
   if (getRepo.name === Repos.RepoName.GithubWebhook) {
     updateGitWebhookRepository();
-  } else {
-    console.error(`This repo have not been allowlisted yet ${getRepo.name}`);
   }
 });
 
