@@ -16,7 +16,7 @@ app.get('/kenny', function (req, res) {
 });
 
 app.get('/pullGit', (req, res) => {
-  child.exec(`./script/UpdateGitWebhookRepo.sh`, (error, stdout, stderr) => {
+  child.exec(`./scripts/UpdateGitWebhookRepo.sh`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
