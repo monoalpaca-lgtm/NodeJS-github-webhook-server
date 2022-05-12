@@ -23,7 +23,7 @@ app.use(express.json());
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.redirect('https://github.com/monoalpaca-lgtm/NodeJS-github-webhook-server');
 });
 
 app.get('/kenny', function (req, res) {
