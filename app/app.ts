@@ -38,6 +38,7 @@ app.get('/pullGit', (req, res) => {
 });
 
 app.post('/github-webhooks/payload', (req, res) => {
+  console.log('Got body:', req.body);
   res.sendStatus(200);
   res.end();
 
