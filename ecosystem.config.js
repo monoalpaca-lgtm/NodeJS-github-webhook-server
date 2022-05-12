@@ -6,11 +6,8 @@ module.exports = {
         watch: ["build"],
         env: {
             "PORT": 3000,
-            "NODE_ENV": "development"
-        },
-        env_production: {
-            "PORT": 3000,
-            "NODE_ENV": "production",
+            "NODE_ENV": "development",
+            "GITHUB_WEBHOOK_PATH": "/var/node/github-webhooks"
         }
       }
   ]
