@@ -4,4 +4,4 @@
 
 cd $GITHUB_WEBHOOK_PATH
 git fetch && git reset --hard origin/main
-npm run tsc
+npm run freshtsc
