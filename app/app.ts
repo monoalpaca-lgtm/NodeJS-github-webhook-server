@@ -17,6 +17,7 @@ app.get('/kenny', function (req, res) {
 });
 
 app.get('/pullGit', (req, res) => {
+  res.send(`Updated repository here: ${githubWebhooksPath}`);
   child.exec(`./scripts/UpdateGitWebhookRepo.sh`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
@@ -24,7 +25,6 @@ app.get('/pullGit', (req, res) => {
     }
     console.log(`stdout: ${stdout}`);
     console.error(`stderr: ${stderr}`);
-    res.send(`Updated repository here: ${githubWebhooksPath}`);
   });
 });
 
