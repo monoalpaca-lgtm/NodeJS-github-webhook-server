@@ -27,11 +27,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/kenny', function (req, res) {
-  res.send('Its Kenny!');
-});
-
-app.get('/andy', function (req, res) {
-  res.send('Its andy!');
+  res.redirect('https://nobrainapes.com/kenny/');
 });
 
 app.get('/pullGit', (req, res) => {
