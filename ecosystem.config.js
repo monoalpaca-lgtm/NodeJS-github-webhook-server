@@ -3,7 +3,7 @@ module.exports = {
       {
         name: "github-webhooks",
         script: "./build/app.js",
-        watch: ["build"],
+        watch: false,
         env_development: {
             "PORT": 4500,
             "NODE_ENV": "development",
