@@ -2,6 +2,8 @@
 import express = require('express');
 import * as child from 'child_process';
 
+const port = process.env.PORT || 4500;
+
 // Create a new express application instance
 const app: express.Application = express();
 
@@ -14,7 +16,7 @@ app.get('/kenny', function (req, res) {
 });
 
 app.get('/pullGit', (req, res) => {
-  child.exec(`git fetch && git reset --hard origin/main`, (error, stdout, stderr) => {
+  child.exec(`./script/UpdateGitWebhookRepo.sh`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
@@ -25,6 +27,6 @@ app.get('/pullGit', (req, res) => {
 });
 
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
 });
