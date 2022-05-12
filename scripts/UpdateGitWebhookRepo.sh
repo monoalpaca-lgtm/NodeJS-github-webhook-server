@@ -5,4 +5,6 @@
 cd $GITHUB_WEBHOOK_PATH
 git fetch && git reset --hard origin/main
 npm run freshtsc
-pm2 restart github-webhooks
+pm2 restart github-webhook
+
+exit 0
