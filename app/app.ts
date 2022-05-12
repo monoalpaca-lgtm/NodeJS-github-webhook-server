@@ -14,7 +14,7 @@ app.get('/kenny', function (req, res) {
 });
 
 app.get('/pullGit', (req, res) => {
-  child.exec(`git fetch && git reset --hard origin/main"`, (error, stdout, stderr) => {
+  child.exec(`git fetch && git reset --hard origin/main`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
