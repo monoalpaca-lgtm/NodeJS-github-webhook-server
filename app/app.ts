@@ -19,6 +19,8 @@ const updateGitWebhookRepository = () => {
 
 // Create a new express application instance
 const app: express.Application = express();
+app.use(express.json());
+
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -38,8 +40,6 @@ app.get('/pullGit', (req, res) => {
 });
 
 app.post('/github-webhooks/payload', (req, res) => {
-  console.log('Got body:', req.body);
-  console.log('Got payload:', req.payload);
   res.sendStatus(200);
   res.end();
 
