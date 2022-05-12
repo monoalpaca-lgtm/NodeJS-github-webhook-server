@@ -45,10 +45,15 @@ app.post('/github-webhooks/payload', (req, res) => {
 
   const requestRepoName  = req.body.repository.name;
 
+  if (!requestRepoName) {
+    console.error('The request did not come with a name', JSON.stringify(1, null, req.body));
+    return;
+  }
+
   const getRepo = Repos.RepoByName[requestRepoName];
   
   if (!getRepo) {
-    console.error(`This repo have not been allowlisted yet ${getRepo.name}`);
+    console.error(`This repo have not been allowlisted yet ${requestRepoName}`);
     return;
   }
 
