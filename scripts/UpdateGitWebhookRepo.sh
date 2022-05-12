@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ ! -d "$GITHUB_WEBHOOK_PATH" ] && echo "Directory $GITHUB_WEBHOOK_PATH DOES NOT exists."
+[ ! -d "$GITHUB_WEBHOOK_PATH" ] && echo "Directory $GITHUB_WEBHOOK_PATH DOES NOT exists." && exit 1
 
 cd $GITHUB_WEBHOOK_PATH
 git fetch && git reset --hard origin/main
